@@ -1,0 +1,95 @@
+:root {
+    --bg-color: #00539CFF;
+    --secondary: #555;
+    --primary: #B8C7F4;
+    --logo-color: #F48F51;   
+} 
+
+body {
+    background-color: #f2f2f2;
+} 
+
+
+h1 {
+    color: var(--secondary);
+    padding-top: 1em;
+    text-align: center;
+}
+
+h3 {
+    color: var(--secondary);
+    padding-top: 1em;
+    text-align: center;
+}
+
+.guess-button {
+    font-family: lato,sans-serif;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--secondary);
+    display: flex;
+    padding: 10px 40px 10px 40px;
+    position: absolute;
+    border: 2px solid #555;
+    border-radius: 20px;
+    right: 46.5%;
+    top: 50%;
+    transition: all .3s ease-in-out; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.guess-button:hover {
+    cursor: pointer;
+    transform: scale(1.08); 
+}
+
+.draw {
+    /* width: 200px;
+    height: 200px; */
+    border: 1px solid #555;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+} 
+
+.clear-button {
+    background-color: #f2f2f2;
+    color: var(--secondary);
+    padding: 2px 7px 2px 7px;
+    position: absolute;
+    border: 2px solid #555;
+    border-radius: 20px;
+    left: 54.5%;
+    top: 14%;
+    transition: all .3s ease-in-out;
+}
+
+.clear-button:hover {
+    cursor: pointer;
+    transform: scale(1.08); 
+}
+
+/* 
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} */
+
+/* .center-canvas {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+} */

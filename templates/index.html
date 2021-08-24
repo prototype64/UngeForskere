@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/header.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <title>ZeroToTen</title>
+  </head>
+
+  <body>
+    
+    <header>
+      <nav class="navbar">
+        <a href="/"><h2 id="logo">Handwritten</h2></a>
+      </nav>
+    </header>
+    
+    <div class="center">
+      <h1>ZeroToTen</h1>
+      <h3>ZeroToTen is a website which can guess which number you have drawed by using a neural network trained on the MNIST datatset</h3>  
+      <canvas class="draw" id="drawing" width="200" height="200"></canvas>
+      <!-- <button class="clear-button">CLEAR</button> -->
+      <button class="guess-button">GUESS</button>
+    </div>
+
+    <button class="clear-button" onclick="clearCanvas()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rotate" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M19.95 11a8 8 0 1 0 -.5 4m.5 5v-5h-5"></path>
+      </svg>
+    </button>
+    
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+  
+  </body>
+</html>
