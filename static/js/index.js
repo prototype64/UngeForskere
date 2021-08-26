@@ -69,15 +69,20 @@ submitButton.onclick = (e) => {
 			const mostLikely = predictions.indexOf(highestValue);
 			console.log(Math.max(...predictions));
 
-			result.textContent = `${mostLikely} (certainty: ${
+			result.textContent = `${mostLikely} (sikkerhed: ${
 				Math.round((highestValue * 100 + Number.EPSILON) * 100) / 100
 			}%)`;
-			
-			for (var i = 0; i < rows.length; i++) {
-				let row_data = rows[i];
-                let row = statistics.insertRow();
-                let cell2 = row.insertCell(1);
-                cell2.innerText = row_data[1];
+
+			const tableRow = statistics.children[0].children[1];
+			const tablePredictions = tableRow.getElementsByTagName("td");
+
+			for (var i = 0; i < tablePredictions.length; i++) {
+				const tableCell = tablePredictions[i];
+				const prediction = predictions[i];
+
+				tableCell.textContent = `${
+					Math.round((prediction * 100 + Number.EPSILON) * 100) / 100
+				}%`;
 			}
 		})
 	);
