@@ -38,31 +38,39 @@ document.addEventListener("mousemove", draw);
 document.addEventListener("mousedown", setPosition);
 document.addEventListener("mouseenter", setPosition);
 
+const result = document.getElementById("result");
 const submitButton = document.getElementById("submit");
 
 submitButton.onclick = (e) => {
 	e.preventDefault();
 	const imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
 	const pixels = imgData.data;
-	console.log("pixels", pixels);
 	let grayscale = [];
 
 	// get lightness of each pixel
 	for (let i = 0; i < pixels.length; i += 4) {
 		// const lightness = parseInt((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3);
-		grayscale.push(pixels[3] / 255);
+		// grayscale.push(lightness);
+		grayscale.push(pixels[i + 3] / 255);
 	}
 
-	console.log("grayscale", grayscale);
-
-	fetch("/upload", {
+	fetch("/predict", {
 		method: "POST",
 		headers: {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify(grayscale),
-	}).then((res) => {
-		console.log("Request complete! response:", res);
-	});
+	}).then((res) =>
+		res.json().then((data) => {
+			const predictions = data.predictions;
+			const highestValue = Math.max(...predictions);
+			const mostLikely = predictions.indexOf(highestValue);
+			console.log(Math.max(...predictions));
+
+			result.textContent = `${mostLikely} (certainty: ${
+				Math.round((highestValue * 100 + Number.EPSILON) * 100) / 100
+			}%)`;
+		})
+	);
 };

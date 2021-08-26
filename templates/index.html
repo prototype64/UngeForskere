@@ -25,11 +25,17 @@
 		</header>
 
 		<div class="center">
-			<h1>ZeroToTen</h1>
-			<h3>
-				ZeroToTen is a website which can guess which number you have drawed by
-				using a neural network trained on the MNIST datatset
-			</h3>
+			<!--
+				<h1 class="pt">ZeroToTen</h1>
+				<h3 class="pt">
+					ZeroToTen is a website which can guess which number you have drawed by
+					using a neural network trained on the MNIST datatset
+				</h3>
+			-->
+			<div class="text-center">
+				<h1 class="text-inline">Your predicted result is</h1>
+				<h1 id="result" class="text-inline"></h1>
+			</div>
 			<div class="canvas-container">
 				<button class="clear-button" onclick="clearCanvas()">
 					<svg
@@ -48,7 +54,7 @@
 						<path d="M19.95 11a8 8 0 1 0 -.5 4m.5 5v-5h-5"></path>
 					</svg>
 				</button>
-				<canvas class="canvas" id="drawing" width="56" height="56"></canvas>
+				<canvas class="canvas" id="drawing" width="28" height="28"></canvas>
 			</div>
 			<!-- <button class="clear-button">CLEAR</button> -->
 			<div class="center-h">

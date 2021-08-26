@@ -9,15 +9,24 @@ body {
 	background-color: #f2f2f2;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.text-inline {
+	clear: both;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 h1 {
 	color: var(--secondary);
-	padding-top: 1em;
 	text-align: center;
 }
 
 h3 {
 	color: var(--secondary);
-	padding-top: 1em;
 	text-align: center;
 }
 
@@ -52,7 +61,7 @@ h3 {
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100px;
+	width: 112px;
 	height: min-content;
 	margin-bottom: 2rem;
 }
