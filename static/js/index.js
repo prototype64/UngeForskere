@@ -40,6 +40,7 @@ document.addEventListener("mouseenter", setPosition);
 
 const result = document.getElementById("result");
 const submitButton = document.getElementById("submit");
+const statistics = document.getElementById("statistics");
 
 submitButton.onclick = (e) => {
 	e.preventDefault();
@@ -71,7 +72,8 @@ submitButton.onclick = (e) => {
 			result.textContent = `${mostLikely} (certainty: ${
 				Math.round((highestValue * 100 + Number.EPSILON) * 100) / 100
 			}%)`;
-			for (var i = 0; i < predictions; i++) {
+			
+			for (var i = 0; i < rows.length; i++) {
 				let row_data = rows[i];
                 let row = statistics.insertRow();
                 let cell2 = row.insertCell(1);

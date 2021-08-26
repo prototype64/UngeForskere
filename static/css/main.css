@@ -94,6 +94,12 @@ h3 {
 	justify-content: center;
 }
 
+#statistics {
+	border-collapse: collapse;
+	width: 350px;
+	margin-bottom: 30px;
+}
+
 /* 
 .center {
     display: flex;
