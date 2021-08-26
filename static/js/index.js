@@ -71,6 +71,12 @@ submitButton.onclick = (e) => {
 			result.textContent = `${mostLikely} (certainty: ${
 				Math.round((highestValue * 100 + Number.EPSILON) * 100) / 100
 			}%)`;
+			for (var i = 0; i < predictions; i++) {
+				let row_data = rows[i];
+                let row = statistics.insertRow();
+                let cell2 = row.insertCell(1);
+                cell2.innerText = row_data[1];
+			}
 		})
 	);
 };
