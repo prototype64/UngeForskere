@@ -70,9 +70,8 @@ model.save("model.h5")
 # # pixel, pixel
 # input_shape = (28, 28, 1)
 
-""" giving every pixel a value between o and 1
-    we are dividing with 255 because every pixel value can go upto 255
-"""
+# giving every pixel a value between o and 1
+# we are dividing with 255 because every pixel value can go upto 255
 # x_train = x_train.astype("float32") / 255
 # x_test = x_test.astype("float32") / 255
 
